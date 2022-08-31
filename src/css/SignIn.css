@@ -1,0 +1,14 @@
+.formDiv{
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    padding: 1%;
+    border:1px solid black;
+    border-radius: 20px;
+    box-shadow: 2px 4px 2px 4px grey;
+    background-color: white;
+}
+#labelmail #labelpass{
+    text-align: left;
+    font-size: 10%;
+}

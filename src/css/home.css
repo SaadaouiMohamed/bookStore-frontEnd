@@ -1,0 +1,14 @@
+#list{
+    list-style-type: none;
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+}
+
+#li{
+    /* flex-basis: 30%; */
+    margin-top: 2%;
+   vertical-align: top;
+   display: inline-block;
+}
