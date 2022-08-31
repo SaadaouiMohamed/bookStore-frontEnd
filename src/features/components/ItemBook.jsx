@@ -35,12 +35,15 @@ function addToBasket (){
 
   return (
    
-    <Card style={{width: '18rem',marginTop:'2%',textAlign:'center'}}>
+    <Card style={{width: '18rem',marginTop:'2%',textAlign:'center'}} id='card'>
     <Card.Img variant="top" src={`http://localhost:5000/static/${props.item.image}`} style={{ width:'286px',height:'180px'}}/>
     <Card.Body>
       <Card.Title>{props.item.name}</Card.Title>
       <Card.Text>
         {props.item.author}
+      </Card.Text>
+      <Card.Text>
+        {props.item.category.category}
       </Card.Text>
       <Card.Text><Rating rating={props.item.rating}/></Card.Text>
       <Button variant="primary" href={`/detail/${props.item._id}`}>See Details</Button>

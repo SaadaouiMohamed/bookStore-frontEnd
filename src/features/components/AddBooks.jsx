@@ -31,7 +31,7 @@ export default function AddBooks() {
             InStock:book.InStock,
         }
         await axios.post("http://localhost:5000/api/newBook",obj)
-       window.location.href='/'
+       window.location.href='/home'
     }
 
 
@@ -73,7 +73,7 @@ export default function AddBooks() {
     useEffect(()=>{displayBooks()},[])
 
   return (
-    <div>
+    <div className='formDiv'>
     <Form>
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Book Category</Form.Label>
@@ -84,7 +84,7 @@ export default function AddBooks() {
     </Button>
   </Form>
 
-
+<hr></hr>
     <Form>
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Book Name</Form.Label>

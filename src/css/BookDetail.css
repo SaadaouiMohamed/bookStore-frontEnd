@@ -90,7 +90,7 @@ h4,h5,p{
 /*************************** style add review form ***********************/
 
 
-form{
+#reviewForm{
     border: 1px solid lightgray;
     border-radius: 35px;
     background-color: white;
@@ -100,7 +100,7 @@ form{
     padding: 2%;
 }
 
-input{
+#reviewForm input{
     margin-top: 2%;
 }
 .rating {

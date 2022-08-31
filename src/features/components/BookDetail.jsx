@@ -8,7 +8,7 @@ import axios from 'axios'
 import Rating from './Rating'
 import '../../css/BookDetail.css'
 
-export default function BookDetail() {
+export default function BookDetail(props) {
     let location =useParams()
    
 
@@ -101,6 +101,7 @@ useEffect(()=>{fetchReviews()},[])
 
 
 let addToBasket= ()=>{
+    props.setCount(props.count+1)
     let basket=storage
     basket=[...basket,{...data,qty:qty}]
     localStorage.setItem('list',JSON.stringify(basket))
@@ -153,7 +154,7 @@ let addToBasket= ()=>{
 
 
     <div className='addReview'>
-    <form method='post'>
+    <form method='post' id='reviewForm'>
     <h3>Rate this book</h3>
     
     <input type='radio' value='1' name='rating' onChange={(e)=>setReview({...review,rating:Number(e.target.value)})} className='rating'></input>

@@ -9,9 +9,13 @@ export default function Home(props) {
         let json=await resp.json()
         setData(json.book)
     }
-
+console.log(data)
     useEffect(()=>{displayBooks()},[])
-    const list = data.map((elem,i)=>{
+    const list = data.filter((item)=>{
+      return(
+        item.name.toLowerCase().includes(props.search.toLowerCase()) || item.author.toLowerCase().includes(props.search.toLowerCase()) ||item.category.category.toLowerCase().includes(props.search.toLowerCase())
+      )
+    }).map((elem,i)=>{
         return(
             <li key={i} id='li'><ItemBook item={elem} count={props.count} setCount={props.setCount}/></li>
         )

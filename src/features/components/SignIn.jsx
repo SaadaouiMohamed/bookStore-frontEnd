@@ -16,7 +16,7 @@ async function login(e){
         let userToken="Bearer "+res.data.token
         localStorage.setItem("token", JSON.stringify({ token: userToken }))
     })
-    window.location.href='/'
+    window.location.href='/home'
 }
 
   return (

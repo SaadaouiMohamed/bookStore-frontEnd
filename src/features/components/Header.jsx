@@ -1,10 +1,10 @@
 import React from 'react'
-import { Navbar,Nav,Container } from 'react-bootstrap'
+import { Navbar,Nav,Container, Form, Button, Row, Col } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faArrowRightFromBracket,faCartShopping} from '@fortawesome/free-solid-svg-icons'
+import {faArrowRightFromBracket,faCartShopping,faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import bookLogo from '../../assets/bookLogo1.webp'
 
-export default function Header({count}) {
+export default function Header(props) {
 
   
   async function logout() {
@@ -16,15 +16,33 @@ export default function Header({count}) {
     <div>
     <Navbar bg="light" variant="light">
     <Container>
-      <Navbar.Brand href="#home"></Navbar.Brand>
-      <img src={bookLogo} style={{width:'10%'}}></img>
+    <Row>
+    <Col>
+      
       <Nav className="me-auto">
-        <Nav.Link href="/">Home</Nav.Link>
+      <img src={bookLogo} style={{width:'10%'}}></img>
+        <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link href="/addBooks">Add Books</Nav.Link>
-        <Nav.Link href="/login">Login</Nav.Link>
-        <Nav.Link href="/login"><FontAwesomeIcon icon={faArrowRightFromBracket} onClick={()=>logout()}/></Nav.Link>
-        <Nav.Link href="/panier"><FontAwesomeIcon icon={faCartShopping} />({count})</Nav.Link>
+        <Nav.Link href="/">Login</Nav.Link>
+        
       </Nav>
+      </Col>
+      <Col lg={4}>
+      <Nav className="me-auto">
+      <Nav.Link href="/"><FontAwesomeIcon icon={faArrowRightFromBracket} onClick={()=>logout()}/></Nav.Link>
+        <Nav.Link href="/panier"><FontAwesomeIcon icon={faCartShopping} />({props.count})</Nav.Link>
+      <Form className="d-flex">
+      <Form.Control
+        type="search"
+        placeholder='book name/author/category'
+        className="me-2"
+        aria-label="search"
+        onChange={(e)=>props.setSearch(e.target.value)}
+      />
+    </Form>
+    </Nav>
+    </Col>
+    </Row>
     </Container>
   </Navbar>
     </div>
